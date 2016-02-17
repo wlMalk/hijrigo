@@ -55,6 +55,9 @@ func JulianToHijriYMD(y, m, d int) (year, month, day int) {
 		}
 		index++
 	}
+	if index == 0 {
+		return 0, 0, 0
+	}
 	lunation := float64(index + 15292)
 	ii := math.Floor((lunation - 1) / 12)
 	year = int(ii + 1)
